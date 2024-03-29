@@ -1,0 +1,100 @@
+.sidebar {
+  width: calc(20vw - 2rem);
+  background-color: #f5f5f5;
+  padding: 2rem 2rem 0 0;
+}
+
+.logo {
+  color: #000;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.logo .name {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.role {
+  font-size: 0.8rem;
+  color: #a9a9a9;
+}
+.menuItem {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border-radius: 30px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.active {
+  background-color: #e1e6f0;
+  color: #4a86e8;
+  font-weight: 500;
+}
+
+.inactive {
+  color: #a9a9a9;
+}
+.divider {
+  border-bottom: 1px solid #e6e6e6;
+  margin: 1.5rem auto;
+  width: 85%;
+  text-align: center;
+}
+
+.nestedMenu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.nestedItem {
+  margin-left: 2rem;
+  padding: 1rem 2rem;
+  position: relative;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.activeNested {
+  color: #4a86e8;
+  font-weight: 500;
+}
+.inactiveNested {
+  color: #a9a9a9;
+}
+.nestedItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 4px;
+  background-color: transparent;
+  border-radius: 4px;
+  z-index: 5;
+}
+
+.nestedItem.activeNested::before {
+  background-color: #4a86e8;
+}
+.nestedMenu::before {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 4px;
+  background-color: transparent;
+  border-radius: 4px;
+  z-index: 2;
+  background-color: #a9a9a9;
+}
+
+.menuItem.activeNested,
+.nestedItem.activeNested {
+  font-weight: 500;
+}
